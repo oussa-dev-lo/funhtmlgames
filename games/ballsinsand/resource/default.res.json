@@ -1,0 +1,167 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,share1_jpg,share2_jpg,share3_jpg,system_json,texiaocolor_json,soundcoin_mp3,soundfail_mp3,soundhit_mp3,soundpress_mp3,soundrandom_mp3,soundstar1_mp3,soundstar2_mp3,soundstar3_mp3,soundunlock_mp3,soundwarn_mp3,soundball_mp3,soundbomb_mp3,soundcar_mp3,soundwin_mp3,trailing_json,particle_json,numimage_fnt,numimage_png,soundcollion1_mp3,soundcollion2_mp3,soundcollion3_mp3,gameall_json",
+			"name": "preload"
+		},
+		{
+			"keys": "loading2_png,loading1_png",
+			"name": "loading"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/system/share1.jpg",
+			"type": "image",
+			"name": "share1_jpg"
+		},
+		{
+			"url": "assets/system/share2.jpg",
+			"type": "image",
+			"name": "share2_jpg"
+		},
+		{
+			"url": "assets/system/share3.jpg",
+			"type": "image",
+			"name": "share3_jpg"
+		},
+		{
+			"url": "assets/system/system.json",
+			"type": "sheet",
+			"name": "system_json",
+			"subkeys": "bg_tips_png,default-portrait_png,head_cycle_mask_png,head_square_mask_png,loading_indicator_png,rank_levelbg_png,share_challenge_head1_png,share_challenge_head2_png,share_challenge_head3_png,share_crown_png,sharehead_png"
+		},
+		{
+			"url": "assets/system/loading2.png",
+			"type": "image",
+			"name": "loading2_png"
+		},
+		{
+			"url": "assets/system/loading1.png",
+			"type": "image",
+			"name": "loading1_png"
+		},
+		{
+			"url": "assets/particle/texiaocolor.json",
+			"type": "json",
+			"name": "texiaocolor_json"
+		},
+		{
+			"url": "assets/sound/soundcoin.mp3",
+			"type": "sound",
+			"name": "soundcoin_mp3"
+		},
+		{
+			"url": "assets/sound/soundfail.mp3",
+			"type": "sound",
+			"name": "soundfail_mp3"
+		},
+		{
+			"url": "assets/sound/soundhit.mp3",
+			"type": "sound",
+			"name": "soundhit_mp3"
+		},
+		{
+			"url": "assets/sound/soundpress.mp3",
+			"type": "sound",
+			"name": "soundpress_mp3"
+		},
+		{
+			"url": "assets/sound/soundrandom.mp3",
+			"type": "sound",
+			"name": "soundrandom_mp3"
+		},
+		{
+			"url": "assets/sound/soundstar1.mp3",
+			"type": "sound",
+			"name": "soundstar1_mp3"
+		},
+		{
+			"url": "assets/sound/soundstar2.mp3",
+			"type": "sound",
+			"name": "soundstar2_mp3"
+		},
+		{
+			"url": "assets/sound/soundstar3.mp3",
+			"type": "sound",
+			"name": "soundstar3_mp3"
+		},
+		{
+			"url": "assets/sound/soundunlock.mp3",
+			"type": "sound",
+			"name": "soundunlock_mp3"
+		},
+		{
+			"url": "assets/sound/soundwarn.mp3",
+			"type": "sound",
+			"name": "soundwarn_mp3"
+		},
+		{
+			"url": "assets/sound/soundball.mp3",
+			"type": "sound",
+			"name": "soundball_mp3"
+		},
+		{
+			"url": "assets/sound/soundbomb.mp3",
+			"type": "sound",
+			"name": "soundbomb_mp3"
+		},
+		{
+			"url": "assets/sound/soundcar.mp3",
+			"type": "sound",
+			"name": "soundcar_mp3"
+		},
+		{
+			"url": "assets/sound/soundwin.mp3",
+			"type": "sound",
+			"name": "soundwin_mp3"
+		},
+		{
+			"url": "assets/particle/trailing.json",
+			"type": "json",
+			"name": "trailing_json"
+		},
+		{
+			"name": "particle_json",
+			"type": "sheet",
+			"url": "assets/image/particle.json",
+			"subkeys": "trailing_png,texiaocolor2_png,texiaocolor3_png,texiaocolor1_png"
+		},
+		{
+			"name": "numimage_fnt",
+			"type": "font",
+			"url": "assets/image/numimage.fnt"
+		},
+		{
+			"name": "numimage_png",
+			"type": "image",
+			"url": "assets/image/numimage.png"
+		},
+		{
+			"name": "soundcollion1_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundcollion1.mp3"
+		},
+		{
+			"name": "soundcollion2_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundcollion2.mp3"
+		},
+		{
+			"name": "soundcollion3_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundcollion3.mp3"
+		},
+		{
+			"name": "gameall_json",
+			"type": "sheet",
+			"url": "assets/image/gameall.json",
+			"subkeys": "moregame3_png,moregame2_png,moregame1_png,gameretry_png,titlebtn4_png,titlebtn1_png,titlebtn2_png,titlebtn3_png,gamereturn_png,titleview1_png,title_png,titleview2_png,shoplight_png,shopselect_png,herobg_png,shopbg_png,shoptitle_png,shopbtn2_png,shopbtn3_png,shopbtn4_png,herounlock_png,rankbg_png,rankview2_png,rankbtn1_png,rankview3_png,rankstar_png,rankmark_png,rankview1_png,rankbtn3_png,rankbtn2_png,rankshare_png,rankme_png,overprogress2_png,overprogress1_png,interbg_png,overview_png,overbtn2_png,overbtn3_png,overbtn1_png,overstar1_png,overstar2_png,map16_png,map3_png,map17_png,map26-1_png,map29_png,map24-1_png,map15_png,map19-1_png,map1-1_png,map1_png,map14_png,map28_png,map10_png,map4_png,map20-1_png,map5_png,map5-1_png,map7-1_png,map13_png,map22-1_png,map7_png,map6_png,mapwall_png,map18-1_png,map25-1_png,map18-2_png,map27-1_png,mapbg3_png,map23-1_png,map6-1_png,mapbg2_png,map4-1_png,map21-1_png,mapbg1_png,map10-1_png,map8-1_png,maptexture_png,mapwin1_png,map16-1_png,map30-1_png,map29-1_png,map14-1_png,map23_png,map22_png,map13-1_png,map9-1_png,map20_png,map8_png,map9_png,map21_png,map25_png,map19_png,map15-1_png,mapdraw2_png,map18_png,map24_png,map30_png,map28-1_png,map26_png,map17-1_png,mapdraw1_png,map27_png,hero1_png,balls1_png,hero2_png,balls3_png,balls2_png,hero3_png,hero7_png,balls6_png,hero6_png,hero4_png,balls5_png,balls4_png,hero5_png,masonry1_png,masonry2_png,hero8_png,hero9_png,shoptip_png,masonry3_png"
+		}
+	]
+}

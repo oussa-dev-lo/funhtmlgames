@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>疯狂的赛车</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' />
+    <meta name="renderer" content="webkit" />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='full-screen' content='true' />
+    <meta name='x5-fullscreen' content='true' />
+    <meta name='360-fullscreen' content='true' />
+    <meta name="laya" screenorientation="portrait" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv='expires' content='0' />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+</head>
+
+<body>
+    <!-- FB设置Start	 -->
+    <script src="https://connect.facebook.net/en_US/fbinstant.6.2.js"></script>
+    <script type="text/javascript" src="FBIndex.js"></script>
+    <script type="text/javascript" src="GameSetting.js"></script>
+    <!-- FB设置end	 -->
+
+    <!--以下引用了常用类库，如果不使用，可以删除-->
+
+    <!--核心包，封装了显示对象渲染，事件，时间管理，时间轴动画，缓动，消息交互,socket，本地存储，鼠标触摸，声音，加载，颜色滤镜，位图字体等-->
+    <script type="text/javascript" src="libs/laya.core.js"></script>
+    <!--提供了微信小游戏的适配-->
+    <!-- <script type="text/javascript" src="libs/laya.wxmini.js"></script> -->
+    <!--封装了webgl渲染管线，如果使用webgl渲染，可以在初始化时调用Laya.init(1000,800,laya.webgl.WebGL);-->
+    <script type="text/javascript" src="libs/laya.webgl.js"></script>
+    <!--是动画模块，包含了swf动画，骨骼动画等-->
+    <script type="text/javascript" src="libs/laya.ani.js"></script>
+    <!--提供了制作UI的各种组件实现-->
+    <script type="text/javascript" src="libs/laya.ui.js"></script>
+    <!--提供LayaAir3D接口-->
+    <script type="text/javascript" src="libs/laya.d3.js"></script>
+    <!--用户自定义顺序文件添加到这里-->
+    <!--jsfile--Custom-->
+    <!--jsfile--Custom-->
+    <!--自定义的js(src文件夹下)文件自动添加到下面jsfile模块标签里面里-->
+    <!--删除标签，ide不会自动添加js文件，请谨慎操作-->
+    <!--jsfile--startTag-->
+    <script src="js/wechat/SoundManager.js"></script>
+    <script src="js/GameConfig.js"></script>
+    <script src="js/game/WorldRankItemData.js"></script>
+    <script src="js/game/SkinManager.js"></script>
+    <script src="js/game/ObjectDefine.js"></script>
+    <script src="js/game/GameScene.js"></script>
+    <script src="js/game/GameEvent.js"></script>
+    <script src="js/game/GameDefine.js"></script>
+    <script src="js/game/GameConfig.js"></script>
+    <script src="js/base/TimeUtil.js"></script>
+    <script src="js/base/Pool.js"></script>
+    <script src="js/base/MathUtil.js"></script>
+    <script src="js/base/IDestoryable.js"></script>
+    <script src="js/base/HttpPost.js"></script>
+    <script src="js/base/GameBaseData.js"></script>
+    <script src="js/base/Config.js"></script>
+    <script src="js/base/BaseImage.js"></script>
+    <script src="js/base/Objectable.js"></script>
+    <script src="js/ui/layaUI.max.all.js"></script>
+    <script src="js/base/Notice.js"></script>
+    <script src="js/game/BallScript.js"></script>
+    <script src="js/game/Button.js"></script>
+    <script src="js/game/CarScript.js"></script>
+    <script src="js/game/CurvedGlitterMaterial.js"></script>
+    <script src="js/game/CustomMaterial.js"></script>
+    <script src="js/game/GameData.js"></script>
+    <script src="js/game/GameModule.js"></script>
+    <script src="js/game/MatchPlayerData.js"></script>
+    <script src="js/view/AwardDialog.js"></script>
+    <script src="js/view/GameView.js"></script>
+    <script src="js/view/IndexBgView.js"></script>
+    <script src="js/view/IndexView.js"></script>
+    <script src="js/view/MatchDialog.js"></script>
+    <script src="js/view/MatchItem.js"></script>
+    <script src="js/view/TipDialog.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript">
+             var isAppForeground = true;
+
+    function initAds() {
+      if (admob) {
+        var adPublisherIds = {
+          android : {
+            banner : "ca-app-pub-4103102141266934/7942264818",
+            interstitial : "ca-app-pub-4103102141266934/4003019808"
+          }
+        };
+
+        var admobid = (/(android)/i.test(navigator.userAgent)) ? adPublisherIds.android : adPublisherIds.ios;
+
+        admob.setOptions({
+          publisherId:          admobid.banner,
+          interstitialAdId:     admobid.interstitial,
+          autoShowBanner:       true,
+          autoShowInterstitial: true,
+          autoShowRewarded:     false,
+          tappxShare:           0.5,
+        });
+
+        registerAdEvents();
+
+      } else {
+        alert('AdMobAds plugin not ready');
+      }
+    }
+
+    function onAdLoaded(e) {
+      if (isAppForeground) {
+        if (e.adType === admob.AD_TYPE.AD_TYPE_BANNER) {
+          console.log("New banner received");
+        } else if (e.adType === admob.INTERSTITIAL) {
+          console.log("An interstitial has been loaded and autoshown. If you want to automatically show the interstitial ad, set 'autoShowInterstitial: true' in admob.setOptions() or remove it");
+          admob.showInterstitialAd();
+        } else if (e.adType === admob.AD_TYPE_REWARDED) {
+          console.log("New rewarded ad received");
+          admob.showRewardedAd();
+        }
+      }
+    }
+
+    function onPause() {
+      if (isAppForeground) {
+        admob.destroyBannerView();
+        isAppForeground = false;
+      }
+    }
+
+    function onResume() {
+      if (!isAppForeground) {
+
+        setTimeout(admob.createBannerView, 1);
+        setTimeout(admob.requestInterstitialAd, 67000);
+        isAppForeground = true;
+      }
+    }
+
+    // optional, in case respond to events
+    function registerAdEvents() {
+      document.addEventListener(admob.events.onAdLoaded, onAdLoaded);
+      document.addEventListener(admob.events.onAdFailedToLoad, function (e) {});
+      document.addEventListener(admob.events.onAdOpened, function (e) {});
+      document.addEventListener(admob.events.onAdClosed, function (e) {});
+      document.addEventListener(admob.events.onAdLeftApplication, function (e) {});
+
+      document.addEventListener("pause", onPause, false);
+      document.addEventListener("resume", onResume, false);
+    }
+
+    function onDeviceReady() {
+      document.removeEventListener('deviceready', onDeviceReady, false);
+      initAds();
+
+      // display a banner at startup
+      admob.createBannerView();
+
+      // request an interstitial ad
+      admob.requestInterstitialAd();
+
+      // request a rewarded ad
+      admob.requestRewardedAd();
+    }
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+        </script>
+    <!--jsfile--endTag-->
+
+    <!--启动类添加到这里-->
+    <!--jsfile--Main-->
+    <script src="js/LayaAir3D.js"></script>
+    <!--jsfile--Main-->
+</body>
+
+</html>

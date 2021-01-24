@@ -1,0 +1,259 @@
+{
+	"audio": [
+		{
+			"id": "collect_01",
+			"urls": [
+				"assets/snd/collect_01.mp3",
+				"assets/snd/collect_01.m4a"
+			]
+		},
+		{
+			"id": "crash_01",
+			"urls": [
+				"assets/snd/crash_01.mp3",
+				"assets/snd/crash_01.m4a"
+			]
+		},
+		{
+			"id": "crouch_01",
+			"urls": [
+				"assets/snd/crouch_01.mp3",
+				"assets/snd/crouch_01.m4a"
+			]
+		},
+		{
+			"id": "highscore_01",
+			"urls": [
+				"assets/snd/highscore_01.mp3",
+				"assets/snd/highscore_01.m4a"
+			]
+		},
+		{
+			"id": "intro_02",
+			"urls": [
+				"assets/snd/intro_02.mp3",
+				"assets/snd/intro_02.m4a"
+			]
+		},
+		{
+			"id": "intro_03",
+			"urls": [
+				"assets/snd/intro_03.mp3",
+				"assets/snd/intro_03.m4a"
+			]
+		},
+		{
+			"id": "intro_04",
+			"urls": [
+				"assets/snd/intro_04.mp3",
+				"assets/snd/intro_04.m4a"
+			]
+		},
+		{
+			"id": "jump_01",
+			"urls": [
+				"assets/snd/jump_01.mp3",
+				"assets/snd/jump_01.m4a"
+			]
+		},
+		{
+			"id": "laneSwitch_left",
+			"urls": [
+				"assets/snd/laneSwitch_left.mp3",
+				"assets/snd/laneSwitch_left.m4a"
+			]
+		},
+		{
+			"id": "laneSwitch_right",
+			"urls": [
+				"assets/snd/laneSwitch_right.mp3",
+				"assets/snd/laneSwitch_right.m4a"
+			]
+		},
+		{
+			"id": "music_01",
+			"urls": [
+				"assets/snd/music_01.mp3",
+				"assets/snd/music_01.m4a"
+			]
+		},
+		{
+			"id": "scream_alvin",
+			"urls": [
+				"assets/snd/scream_alvin.mp3",
+				"assets/snd/scream_alvin.m4a"
+			]
+		},
+		{
+			"id": "scream_simon",
+			"urls": [
+				"assets/snd/scream_simon.mp3",
+				"assets/snd/scream_simon.m4a"
+			]
+		},
+		{
+			"id": "spawn_alvin",
+			"urls": [
+				"assets/snd/spawn_alvin.mp3",
+				"assets/snd/spawn_alvin.m4a"
+			]
+		},
+		{
+			"id": "spawn_simon",
+			"urls": [
+				"assets/snd/spawn_simon.mp3",
+				"assets/snd/spawn_simon.m4a"
+			]
+		},
+		{
+			"id": "start_01",
+			"urls": [
+				"assets/snd/start_01.mp3",
+				"assets/snd/start_01.m4a"
+			]
+		},
+        {
+			"id": "magnet",
+			"urls": [
+				"assets/snd/magnet.mp3",
+				"assets/snd/magnet.m4a"
+			]
+		},
+        {
+			"id": "slowdown",
+			"urls": [
+				"assets/snd/slowdown.mp3",
+				"assets/snd/slowdown.m4a"
+			]
+		},
+        {
+			"id": "speedup",
+			"urls": [
+				"assets/snd/speedup.mp3",
+				"assets/snd/speedup.m4a"
+			]
+		}
+	],
+	"text": [
+		{
+			"id": "tpl_menu",
+			"url": "tpl/menu.tpl"
+		},
+		{
+			"id": "tpl_game",
+			"url": "tpl/game.tpl"
+		},
+		{
+			"id": "tpl_charSelect",
+			"url": "tpl/charSelect.tpl"
+		},
+		{
+			"id": "tpl_highscore",
+			"url": "tpl/highscore.tpl"
+		},
+		{
+			"id": "tpl_instructions",
+			"url": "tpl/instructions.tpl"
+		},
+		{
+			"id": "tpl_gameOver",
+			"url": "tpl/gameOver.tpl"
+		}
+	],
+	"threeObject": [
+		{
+			"id": "roads",
+			"url": "assets/road/roads.json"
+		}
+	],
+	"threeJson": [
+		{
+			"id": "alvin",
+			"url": "assets/models/alvin.json"
+		},
+		{
+			"id": "coin",
+			"url": "assets/models/coin.json"
+		},
+		{
+			"id": "sky",
+			"url": "assets/models/sky.json"
+		},
+		{
+			"id": "simon",
+			"url": "assets/models/simon.json"
+		},
+		{
+			"id": "hoverboard",
+			"url": "assets/models/hoverboard.json"
+		},
+		{
+			"id": "trail_fallback",
+			"url": "assets/models/trail.json"
+		}
+	],
+	"threeTexture": [
+		{
+			"id": "atlas_01",
+			"url": "assets/road/atlas_01.png"
+		},
+		{
+			"id": "skydome",
+			"url": "assets/models/skydome.png"
+		},
+		{
+			"id": "tex_alvin",
+			"url": "assets/models/tex_alvin.png"
+		},
+		{
+			"id": "tex_simon",
+			"url": "assets/models/tex_simon.png"
+		},
+		{
+			"id": "tex_hoverboard",
+			"url": "assets/models/tex_hoverboard.png"
+		},
+		{
+			"id": "tex_trail",
+			"url": "assets/models/tex_trail.png"
+		},
+        {
+			"id": "tex_particle",
+			"url": "assets/models/circle.png"
+		},
+        {
+			"id": "tex_aura",
+			"url": "assets/models/tex_aura.png"
+		},
+		{
+			"id": "cssButtons",
+			"url": "assets/img/buttons.png"
+		},
+		{
+			"id": "cssLabels",
+			"url": "assets/img/labels.png"
+		},
+		{
+			"id": "cssInstructions",
+			"url": "assets/img/instructions.png"
+		},
+		{
+			"id": "cssBgIntro",
+			"url": "assets/img/bg/bg_intro.jpg"
+		},
+		{
+			"id": "cssBgSelection",
+			"url": "assets/img/bg/bg_selection.jpg"
+		},
+		{
+			"id": "cssBgStart",
+			"url": "assets/img/bg/bg_start.jpg"
+		}
+	],
+	"json": [
+        {
+            "id": "fx_magnet",
+			"url": "assets/fx/magnet.json"
+        }
+	]
+}

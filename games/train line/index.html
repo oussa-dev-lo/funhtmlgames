@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Train Line</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html, body {
+            -ms-touch-action: none;
+            background: #5E5858;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
+         data-entry-class="Main"
+         data-orientation="portrait"
+         data-scale-mode="fixedHeight"
+         data-frame-rate="60"
+         data-content-width="640"
+         data-content-height="1136"
+         data-multi-fingered="2"
+         data-show-fps="false" data-show-log="false"
+         data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+    </div>
+<script>
+    var loadScript = function (list, callback) {
+        var loaded = 0;
+        var loadNext = function () {
+            loadSingleScript(list[loaded], function () {
+                loaded++;
+                if (loaded >= list.length) {
+                    callback();
+                }
+                else {
+                    loadNext();
+                }
+            })
+        };
+        loadNext();
+    };
+
+    var loadSingleScript = function (src, callback) {
+        var s = document.createElement('script');
+        s.async = false;
+        s.src = src;
+        s.addEventListener('load', function () {
+            s.parentNode.removeChild(s);
+            s.removeEventListener('load', arguments.callee, false);
+            callback();
+        }, false);
+        document.body.appendChild(s);
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', './manifest.json?v=' + Math.random(), true);
+    xhr.addEventListener("load", function () {
+        var manifest = JSON.parse(xhr.response);
+        var list = manifest.initial.concat(manifest.game);
+        loadScript(list, function () {
+            /**
+             * {
+             * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+             * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+             * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+             * "calculateCanvasScaleFactor": //a function return canvas scale factor
+             * }
+             **/
+            egret.runEgret({ renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor:function(context) {
+                var backingStore = context.backingStorePixelRatio ||
+                    context.webkitBackingStorePixelRatio ||
+                    context.mozBackingStorePixelRatio ||
+                    context.msBackingStorePixelRatio ||
+                    context.oBackingStorePixelRatio ||
+                    context.backingStorePixelRatio || 1;
+                return (window.devicePixelRatio || 1) / backingStore;
+            }});
+        });
+    });
+    xhr.send(null);
+</script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript">
+             var isAppForeground = true;
+
+    function initAds() {
+      if (admob) {
+        var adPublisherIds = {
+          android : {
+            banner : "ca-app-pub-4103102141266934/6414751726",
+            interstitial : "ca-app-pub-4103102141266934/4910098368"
+          }
+        };
+
+        var admobid = (/(android)/i.test(navigator.userAgent)) ? adPublisherIds.android : adPublisherIds.ios;
+
+        admob.setOptions({
+          publisherId:          admobid.banner,
+          interstitialAdId:     admobid.interstitial,
+          autoShowBanner:       true,
+          autoShowInterstitial: true,
+          autoShowRewarded:     false,
+          tappxShare:           0.5,
+        });
+
+        registerAdEvents();
+
+      } else {
+        alert('AdMobAds plugin not ready');
+      }
+    }
+
+    function onAdLoaded(e) {
+      if (isAppForeground) {
+        if (e.adType === admob.AD_TYPE.AD_TYPE_BANNER) {
+          console.log("New banner received");
+        } else if (e.adType === admob.INTERSTITIAL) {
+          console.log("An interstitial has been loaded and autoshown. If you want to automatically show the interstitial ad, set 'autoShowInterstitial: true' in admob.setOptions() or remove it");
+          admob.showInterstitialAd();
+        } else if (e.adType === admob.AD_TYPE_REWARDED) {
+          console.log("New rewarded ad received");
+          admob.showRewardedAd();
+        }
+      }
+    }
+
+    function onPause() {
+      if (isAppForeground) {
+        admob.destroyBannerView();
+        isAppForeground = false;
+      }
+    }
+
+    function onResume() {
+      if (!isAppForeground) {
+
+        setTimeout(admob.createBannerView, 0.9);
+        setTimeout(admob.requestInterstitialAd, 48000);
+        isAppForeground = true;
+      }
+    }
+
+    // optional, in case respond to events
+    function registerAdEvents() {
+      document.addEventListener(admob.events.onAdLoaded, onAdLoaded);
+      document.addEventListener(admob.events.onAdFailedToLoad, function (e) {});
+      document.addEventListener(admob.events.onAdOpened, function (e) {});
+      document.addEventListener(admob.events.onAdClosed, function (e) {});
+      document.addEventListener(admob.events.onAdLeftApplication, function (e) {});
+
+      document.addEventListener("pause", onPause, false);
+      document.addEventListener("resume", onResume, false);
+    }
+
+    function onDeviceReady() {
+      document.removeEventListener('deviceready', onDeviceReady, false);
+      initAds();
+
+      // display a banner at startup
+      admob.createBannerView();
+
+      // request an interstitial ad
+      admob.requestInterstitialAd();
+
+      // request a rewarded ad
+      admob.requestRewardedAd();
+    }
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+        </script>
+</body>
+
+</html>

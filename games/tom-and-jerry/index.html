@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tom And Jerry</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <script src="/cdn-cgi/apps/head/vZNxLccsa27w1EIo2hZou1KLqW0.js"></script>
+    <style>
+        body,
+        canvas,
+        div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+	<script src="https://connect.facebook.net/en_US/fbinstant.6.2.js"></script>
+</head>
+
+<body style="padding:0; margin: 0; background: #000;">
+    <canvas id="gameCanvas" width="1366" height="768"></canvas>
+    <script src="main.js"></script>
+
+<script>
+  window.onload = function() {
+    FBInstant.initializeAsync().then(function() {
+    FBInstant.startGameAsync().then(function() {
+      FBInstant.setLoadingProgress(100);
+    loadInterstitialAd(); /// Load Interstitia 
+    loadRewardedVideoAd(); /// Load Rewarded
+    });
+    });
+    };
+</script>
+
+
+<script>
+  var preloadedInterstitial = null;
+  var preloadedRewardedVideo = null;
+  var isInterstitialLoaded = false;
+  var isRewardVidLoaded = false;
+  var interstitial=0;
+
+  function loadInterstitialAd() {
+    FBInstant.getInterstitialAdAsync('2213769305596904_2214575032182998', // Your Ad Placement Id
+    ).then(function(interstitial) {
+      // Load the Ad asynchronously
+      isInterstitialLoaded=true;
+      preloadedInterstitial = interstitial;
+      return preloadedInterstitial.loadAsync();
+    }).then(function() {
+      console.log('Interstitial Loaded');
+      if(interstitial==0){
+        showInterstitialAd();
+        interstitial++;
+      }
+    }).catch(function(err){
+      console.error('Interstitial failed to preload: ' + err.message);
+    });
+  }
+
+  function loadRewardedVideoAd(){
+   
+    FBInstant.getRewardedVideoAsync('', // Your Ad Placement Id
+    ).then(function(rewarded) {
+      // Load the Ad asynchronously
+      isRewardVidLoaded=true;
+      preloadedRewardedVideo = rewarded;
+      return preloadedRewardedVideo.loadAsync();
+    }).then(function() {
+      console.log('Rewarded video preloaded')
+    }).catch(function(err){
+      console.error('Rewarded video failed to preload: ' + err.message);
+    });
+  }
+
+  function showInterstitialAd() {
+    if(isInterstitialLoaded){
+      preloadedInterstitial.showAsync().then(function() {
+        // Perform post-ad success operation
+        console.log('Interstitial ad finished successfully');
+        isInterstitialLoaded=false;
+        loadInterstitialAd();
+      }).catch(function(e) {
+        console.error(e.message);
+      });
+    }else{
+      loadInterstitialAd();
+    }
+  }
+
+  function showRewardedVideoAd(){
+
+    if(isRewardVidLoaded){
+      preloadedRewardedVideo.showAsync().then(function() {
+        // Perform post-ad success operation
+        isRewardVidLoaded=false;
+        console.log('Rewarded video watched successfully');        
+      })
+      .catch(function(e) {
+        console.error(e.message);
+      });
+    }else{
+      loadRewardedVideoAd();
+    }
+}
+</script>
+
+    <script type="text/javascript">
+        function instantads() {
+            var ad = null;
+            FBInstant.getInterstitialAdAsync("2213769305596904_2214575032182998").then(function(interstitial) {
+                ad = interstitial;
+                return ad.loadAsync();
+            }).then(function() {
+                return ad.showAsync();
+            }).then(function() {
+
+            }).catch(function(e) {
+                console.log(e.message);
+            });
+        };
+
+        function instantads2() {
+            var ad = null;
+            FBInstant.getInterstitialAdAsync("2213769305596904_2214575032182998").then(function(interstitial) {
+                ad = interstitial;
+                return ad.loadAsync();
+            }).then(function() {
+                return ad.showAsync();
+            }).then(function() {
+
+            }).catch(function(e) {
+                console.log(e.message);
+            });
+        };
+
+        setTimeout(function() {
+            instantads();
+        }, 24100);
+        setInterval(function() {
+            instantads2();
+        }, 55000);
+    </script>
+    <body>
+
+</html>

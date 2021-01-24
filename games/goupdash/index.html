@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Go Up Dash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <link rel="manifest" href="appmanifest.json">
+    <link rel="apple-touch-icon" sizes="128x128" href="icons/icon-128.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="icons/icon-256.png">
+    <link rel="icon" type="image/png" href="icons/icon-256.png">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <script src="c2runtime.js"></script>
+    <script src="start.js"></script>
+    <script src="register-sw.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript">
+             var isAppForeground = true;
+
+    function initAds() {
+      if (admob) {
+        var adPublisherIds = {
+          android : {
+            banner : "ca-app-pub-4103102141266934/1308992567",
+            interstitial : "ca-app-pub-4103102141266934/8355469412"
+          }
+        };
+
+        var admobid = (/(android)/i.test(navigator.userAgent)) ? adPublisherIds.android : adPublisherIds.ios;
+
+        admob.setOptions({
+          publisherId:          admobid.banner,
+          interstitialAdId:     admobid.interstitial,
+          autoShowBanner:       true,
+          autoShowInterstitial: true,
+          autoShowRewarded:     false,
+          tappxShare:           0.5,
+        });
+
+        registerAdEvents();
+
+      } else {
+        alert('AdMobAds plugin not ready');
+      }
+    }
+
+    function onAdLoaded(e) {
+      if (isAppForeground) {
+        if (e.adType === admob.AD_TYPE.AD_TYPE_BANNER) {
+          console.log("New banner received");
+        } else if (e.adType === admob.INTERSTITIAL) {
+          console.log("An interstitial has been loaded and autoshown. If you want to automatically show the interstitial ad, set 'autoShowInterstitial: true' in admob.setOptions() or remove it");
+          admob.showInterstitialAd();
+        } else if (e.adType === admob.AD_TYPE_REWARDED) {
+          console.log("New rewarded ad received");
+          admob.showRewardedAd();
+        }
+      }
+    }
+
+    function onPause() {
+      if (isAppForeground) {
+        admob.destroyBannerView();
+        isAppForeground = false;
+      }
+    }
+
+    function onResume() {
+      if (!isAppForeground) {
+
+        setTimeout(admob.createBannerView, 1);
+        setTimeout(admob.requestInterstitialAd, 66000);
+        isAppForeground = true;
+      }
+    }
+
+    // optional, in case respond to events
+    function registerAdEvents() {
+      document.addEventListener(admob.events.onAdLoaded, onAdLoaded);
+      document.addEventListener(admob.events.onAdFailedToLoad, function (e) {});
+      document.addEventListener(admob.events.onAdOpened, function (e) {});
+      document.addEventListener(admob.events.onAdClosed, function (e) {});
+      document.addEventListener(admob.events.onAdLeftApplication, function (e) {});
+
+      document.addEventListener("pause", onPause, false);
+      document.addEventListener("resume", onResume, false);
+    }
+
+    function onDeviceReady() {
+      document.removeEventListener('deviceready', onDeviceReady, false);
+      initAds();
+
+      // display a banner at startup
+      admob.createBannerView();
+
+      // request an interstitial ad
+      admob.requestInterstitialAd();
+
+      // request a rewarded ad
+      admob.requestRewardedAd();
+    }
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+        </script>
+</body>
+
+</html>

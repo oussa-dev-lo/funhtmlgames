@@ -1,0 +1,5 @@
+{"file":"particle.png","frames":{
+"overcolor3_png":{"x":35,"y":77,"w":16,"h":9,"offX":0,"offY":4,"sourceW":16,"sourceH":16},
+"overcolor2_png":{"x":35,"y":66,"w":16,"h":9,"offX":0,"offY":4,"sourceW":16,"sourceH":16},
+"overcolor1_png":{"x":1,"y":66,"w":32,"h":29,"offX":0,"offY":2,"sourceW":32,"sourceH":32},
+"smoke_png":{"x":1,"y":1,"w":62,"h":63,"offX":1,"offY":0,"sourceW":64,"sourceH":64}}}

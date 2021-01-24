@@ -1,0 +1,162 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,share1_jpg,share2_jpg,share3_jpg,system_json,barrier_json,bodydie_json,headmove_json,herodie_json,move_json,texiaocolor_json,texiaocolor1_json,texiaocolor2_json,sounddie_mp3,soundover_mp3,soundpress_mp3,numimage_fnt,numimage_png,soundwarn_mp3,soundrandom_mp3,soundunlock_mp3,soundbullet_mp3,soundcoin_mp3,sounddrop_mp3,soundperfect_mp3,particle_json,gameall_json",
+			"name": "preload"
+		},
+		{
+			"keys": "loading2_png,loading1_png",
+			"name": "loading"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/system/share1.jpg",
+			"type": "image",
+			"name": "share1_jpg"
+		},
+		{
+			"url": "assets/system/share2.jpg",
+			"type": "image",
+			"name": "share2_jpg"
+		},
+		{
+			"url": "assets/system/share3.jpg",
+			"type": "image",
+			"name": "share3_jpg"
+		},
+		{
+			"url": "assets/system/system.json",
+			"type": "sheet",
+			"name": "system_json",
+			"subkeys": "bg_tips_png,default-portrait_png,head_cycle_mask_png,head_square_mask_png,loading_indicator_png,rank_levelbg_png,share_challenge_head1_png,share_challenge_head2_png,share_challenge_head3_png,share_crown_png,sharehead_png"
+		},
+		{
+			"url": "assets/system/loading2.png",
+			"type": "image",
+			"name": "loading2_png"
+		},
+		{
+			"url": "assets/system/loading1.png",
+			"type": "image",
+			"name": "loading1_png"
+		},
+		{
+			"name": "barrier_json",
+			"type": "json",
+			"url": "assets/particle/barrier.json"
+		},
+		{
+			"name": "bodydie_json",
+			"type": "json",
+			"url": "assets/particle/bodydie.json"
+		},
+		{
+			"name": "headmove_json",
+			"type": "json",
+			"url": "assets/particle/headmove.json"
+		},
+		{
+			"name": "herodie_json",
+			"type": "json",
+			"url": "assets/particle/herodie.json"
+		},
+		{
+			"name": "move_json",
+			"type": "json",
+			"url": "assets/particle/move.json"
+		},
+		{
+			"name": "texiaocolor_json",
+			"type": "json",
+			"url": "assets/particle/texiaocolor.json"
+		},
+		{
+			"name": "texiaocolor1_json",
+			"type": "json",
+			"url": "assets/particle/texiaocolor1.json"
+		},
+		{
+			"name": "texiaocolor2_json",
+			"type": "json",
+			"url": "assets/particle/texiaocolor2.json"
+		},
+		{
+			"name": "sounddie_mp3",
+			"type": "sound",
+			"url": "assets/sound/sounddie.mp3"
+		},
+		{
+			"name": "soundover_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundover.mp3"
+		},
+		{
+			"name": "soundpress_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundpress.mp3"
+		},
+		{
+			"name": "numimage_fnt",
+			"type": "font",
+			"url": "assets/image/numimage.fnt"
+		},
+		{
+			"name": "numimage_png",
+			"type": "image",
+			"url": "assets/image/numimage.png"
+		},
+		{
+			"name": "soundwarn_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundwarn.mp3"
+		},
+		{
+			"name": "soundrandom_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundrandom.mp3"
+		},
+		{
+			"name": "soundunlock_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundunlock.mp3"
+		},
+		{
+			"name": "soundbullet_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundbullet.mp3"
+		},
+		{
+			"name": "soundcoin_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundcoin.mp3"
+		},
+		{
+			"name": "sounddrop_mp3",
+			"type": "sound",
+			"url": "assets/sound/sounddrop.mp3"
+		},
+		{
+			"name": "soundperfect_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundperfect.mp3"
+		},
+		{
+			"name": "particle_json",
+			"type": "sheet",
+			"url": "assets/image/particle.json",
+			"subkeys": "hero126_png,barrier_png,hero16_png,hero17_png,hero127_png,hero125_png,hero15_png,hero135_png,hero137_png,hero136_png,hero145_png,hero186_png,hero75_png,hero187_png,hero146_png,hero185_png,hero76_png,hero77_png,hero147_png,hero157_png,hero67_png,hero66_png,hero156_png,hero65_png,hero155_png,hero97_png,hero96_png,hero55_png,hero165_png,hero167_png,hero57_png,hero95_png,hero56_png,hero166_png,hero176_png,hero46_png,hero85_png,hero47_png,texiaocolor1_png,hero177_png,hero175_png,texiaocolor3_png,hero45_png,hero86_png,hero87_png,texiaocolor2_png,hero107_png,hero37_png,hero36_png,hero106_png,hero35_png,hero105_png,hero115_png,hero25_png,hero116_png,hero26_png,hero27_png,hero117_png"
+		},
+		{
+			"name": "gameall_json",
+			"type": "sheet",
+			"url": "assets/image/gameall.json",
+			"subkeys": "gamehelp1_png,gamehelp3_png,gamehelp2_png,gamealert2_png,gamealert1_png,coin6_png,gametips2_png,coin5_png,coin4_png,gametips1_png,coin0_png,coin1_png,coin3_png,coin2_png,hero132_png,hero133_png,hero131_png,hero14_png,hero124_png,hero134_png,hero11_png,hero121_png,hero123_png,herocheck_png,hero13_png,hero12_png,hero122_png,hero151_png,hero61_png,hero74_png,hero144_png,hero152_png,hero62_png,hero63_png,hero184_png,hero153_png,hero143_png,hero73_png,hero72_png,hero181_png,hero142_png,hero154_png,hero183_png,hero64_png,hero71_png,hero182_png,hero141_png,hero164_png,hero54_png,hero83_png,hero82_png,hero41_png,hero171_png,hero173_png,hero43_png,hero94_png,hero81_png,hero42_png,hero172_png,hero162_png,hero52_png,hero91_png,hero84_png,hero53_png,hero163_png,hero161_png,hero51_png,hero92_png,hero93_png,hero44_png,hero174_png,hero113_png,hero23_png,hero22_png,hero112_png,hero104_png,hero34_png,hero21_png,hero111_png,hero101_png,hero31_png,hero24_png,hero114_png,hero102_png,hero32_png,hero33_png,hero103_png,map27_png,map26_png,map30_png,map24_png,map18_png,map19_png,map25_png,map21_png,map9_png,map8_png,map20_png,map22_png,map23_png,mapbg_png,map12_png,map6_png,map7_png,map11_png,map5_png,map4_png,map10_png,map28_png,map1_png,map17_png,map3_png,map2_png,map16_png,overtitle4_png,overbtn6_png,overbtn7_png,overbtn5_png,overbtn4_png,overtitle2_png,moregame1_png,overbtn1_png,overtitle3_png,overtitle1_png,moregame2_png,overbtn3_png,overbtn2_png,moregame3_png,overadd1_png,overlevel_png,overadd3_png,overadd2_png,overadd6_png,overadd5_png,overadd4_png,overview1_png,overview3_png,overview2_png,overview4_png,interbg_png,inter4_png,inter3_png,inter2_png,showtipsbg_png,inter1_png,rankme_png,rankshare_png,rankbtn4_png,rankbtn2_png,rankbtn3_png,rankview1_png,rankmark_png,rankview3_png,rankbtn1_png,rankview2_png,rankbg_png,herounlock_png,shopbtn4_png,shopbtn1_png,shoptip_png,shopbtn3_png,shopbtn2_png,shoptitle_png,shopbg_png,herobg_png,shopselect_png,shoplight_png,title_png,titlebtn3_png,titlebtn2_png,titlebtn1_png,titlecoin_png,shoppage1_png,shoppage2_png"
+		}
+	]
+}

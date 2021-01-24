@@ -1,0 +1,152 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,soundpress_mp3,share1_jpg,share2_jpg,share3_jpg,system_json,money_json,money_png,trailing_json,trailing_png,soundadd_mp3,soundbeep_mp3,soundbg_mp3,soundcollision_mp3,sounddoor1_mp3,sounddoor2_mp3,sounddrop_mp3,soundmessage_mp3,soundpick_mp3,soundwarn_mp3,soundwin_mp3,soundmoney_mp3,soundstart_mp3,gameall_json,moregame_json",
+			"name": "preload"
+		},
+		{
+			"keys": "loading_png,loading2_png",
+			"name": "loading"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/sound/soundpress.mp3",
+			"type": "sound",
+			"name": "soundpress_mp3"
+		},
+		{
+			"url": "assets/system/share1.jpg",
+			"type": "image",
+			"name": "share1_jpg"
+		},
+		{
+			"url": "assets/system/share2.jpg",
+			"type": "image",
+			"name": "share2_jpg"
+		},
+		{
+			"url": "assets/system/share3.jpg",
+			"type": "image",
+			"name": "share3_jpg"
+		},
+		{
+			"url": "assets/system/system.json",
+			"type": "sheet",
+			"name": "system_json",
+			"subkeys": "bg_tips_png,default-portrait_png,head_cycle_mask_png,head_square_mask_png,loading_indicator_png,rank_levelbg_png,share_challenge_head1_png,share_challenge_head2_png,share_challenge_head3_png,share_crown_png,sharehead_png"
+		},
+		{
+			"url": "assets/system/loading.png",
+			"type": "image",
+			"name": "loading_png"
+		},
+		{
+			"url": "assets/system/loading2.png",
+			"type": "image",
+			"name": "loading2_png"
+		},
+		{
+			"name": "money_json",
+			"type": "json",
+			"url": "assets/image/money.json"
+		},
+		{
+			"name": "money_png",
+			"type": "image",
+			"url": "assets/image/money.png"
+		},
+		{
+			"name": "trailing_json",
+			"type": "json",
+			"url": "assets/image/trailing.json"
+		},
+		{
+			"name": "trailing_png",
+			"type": "image",
+			"url": "assets/image/trailing.png"
+		},
+		{
+			"name": "soundadd_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundadd.mp3"
+		},
+		{
+			"name": "soundbeep_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundbeep.mp3"
+		},
+		{
+			"name": "soundbg_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundbg.mp3"
+		},
+		{
+			"name": "soundcollision_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundcollision.mp3"
+		},
+		{
+			"name": "sounddoor1_mp3",
+			"type": "sound",
+			"url": "assets/sound/sounddoor1.mp3"
+		},
+		{
+			"name": "sounddoor2_mp3",
+			"type": "sound",
+			"url": "assets/sound/sounddoor2.mp3"
+		},
+		{
+			"name": "sounddrop_mp3",
+			"type": "sound",
+			"url": "assets/sound/sounddrop.mp3"
+		},
+		{
+			"name": "soundmessage_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundmessage.mp3"
+		},
+		{
+			"name": "soundpick_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundpick.mp3"
+		},
+		{
+			"name": "soundwarn_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundwarn.mp3"
+		},
+		{
+			"name": "soundwin_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundwin.mp3"
+		},
+		{
+			"name": "soundmoney_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundmoney.mp3"
+		},
+		{
+			"name": "soundstart_mp3",
+			"type": "sound",
+			"url": "assets/sound/soundstart.mp3"
+		},
+		{
+			"name": "gameall_json",
+			"type": "sheet",
+			"url": "assets/image/gameall.json",
+			"subkeys": "overview_png,people41_png,map18_png,people42_png,people52_png,map8_png,map11-1_png,map9-1_png,gameview_png,people51_png,map9-2_png,people22_png,people21_png,mapbg_png,people31_png,bump_png,people32_png,map10-1_png,map2-1_png,people11_png,people12_png,map12_png,people2_png,map6_png,map7_png,people3_png,map13_png,map11_png,people1_png,map5_png,map4_png,map10_png,people4_png,map14_png,map1_png,map15_png,people5_png,map17_png,map3_png,map2_png,map16_png,car72_png,car182_png,car141_png,crash51_png,car71_png,car181_png,car142_png,crash52_png,crash42_png,car152_png,car61_png,crash41_png,car151_png,car62_png,car11_png,car122_png,crash32_png,car12_png,car121_png,crash31_png,herobrake_png,crash21_png,car131_png,crash22_png,car132_png,crash12_png,car102_png,car31_png,crash11_png,car101_png,car32_png,car22_png,car111_png,car21_png,car112_png,car161_png,car91_png,car52_png,car162_png,car92_png,car51_png,car41_png,car172_png,car82_png,crash62_png,car42_png,car171_png,car81_png,crash61_png,overbtn1_png,overbtn3_png,overbtn2_png,overbg_png,overtitle_png,result_png,numlogin_png,interbg_png,inter4_png,numshare_png,nummoney_png,numvideo_png,resultstar_png,inter3_png,inter2_png,showtipsbg_png,inter0_png,inter1_png,rankme_png,rankshare_png,rankbtn2_png,rankview1_png,rankmark_png,rankpeople_png,rankview3_png,rankbtn1_png,rankview2_png,rankbg_png,shopfree_png,shopbtn1_png,shopbtn3_png,shopbtn2_png,shopbg1_png,shopbg2_png,shoplight1_png,shoppage1_png,shoplight2_png,shoppage2_png,shopunlock_png,shopselect_png,titleview2_png,titleview1_png,titlebtn3_png,titlebtn2_png,titlebtn1_png,titlebtn5_png,titlebtn4_png,titlewarn1_png,titlewarn2_png,titlebtn6_png"
+		},
+		{
+			"name": "moregame_json",
+			"type": "sheet",
+			"url": "assets/image/moregame.json",
+			"subkeys": "gameboxview3_png,moregame12_png,moregame7_png,moregame6_png,moregame11_png,moregame4_png,moregame5_png,moregame10_png,moregame1_png,moregame2_png,moregame3_png,moregame8_png,moregame9_png,gamecenter5_png,gamecenter4_png,gameboxtitle_png,gamecenter1_png,gamecenter3_png,gamecenter2_png,gameboxbtn2_png,gameboxview1_png,gameboxbtn3_png,gameboxbtn1_png,gameboxview2_png,gameboxbg2_png,gameboxbg3_png,gameboxbg1_png,gameboxphoto_png,moregame13_png"
+		}
+	]
+}
